@@ -25,12 +25,13 @@ values
 ('$titulo','$local','$valor','$desc')";
 
 // prepara a execução da query SQL a cima
-$command = $conn->prepare($sql);
+$command = $conn -> prepare($sql);
 // executa o comando com a query no DB
 $command -> execute();
 
 echo "Cadastro realizado com sucesso";
 
+$conn = null;
 
 
 } catch (PDOException $error) {
