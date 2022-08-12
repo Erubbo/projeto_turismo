@@ -13,8 +13,6 @@ $command = $conn->prepare ($sql);
 $command-> execute();
 
 header('location: ../adm/gerenciar_viagens.php');
-
-
 }catch(PDOException $error){
 
     echo $error->getMessage();

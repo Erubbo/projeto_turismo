@@ -29,9 +29,9 @@ try {
 </head>
 
 <body>
-    <div class="contaienr">
-        <h3>Gerenciar Viagens</h3>
+    <div class="container">
         <div class="tabela">
+            <h3>Gerenciar Viagens</h3>
             <table>
                 <tr>
                     <th>ID</th>
@@ -42,33 +42,31 @@ try {
                     <th>Alterar</th>
                     <th>Deletar</th>
                 </tr>
-               <?php
-               foreach($dados as $d):
-               ?>
-                <tr>
-                    <td><?php echo $d['id']?></td>
-                    <td><?php echo $d['titulo']?></td>
-                    <td><?php echo $d['local']?></td>
-                    <td>R$ <?php echo $d['valor']?></td>
-                    <td><?php echo $d['desc']?></td>
-                    <td>
-                        Alterar
-                    </td>
-                    <td>
-                        <a href="../backend/_deletar_viagens.php?id=<?php echo $d['id']?>">Deletar</a>
-                    </td>
-                </tr>
-<?php endforeach ?>
+                <?php
+
+                foreach ($dados as $d) :
+                ?>
+                    <tr>
+                        <td><?php echo $d['id'] ?></td>
+                        <td><?php echo $d['titulo'] ?></td>
+                        <td><?php echo $d['local'] ?></td>
+                        <td>R$ <?php echo $d['valor'] ?></td>
+                        <td><?php echo $d['desc'] ?></td>
+                        
+                        <td>
+                            Alterar
+                        </td>
+                        <td>
+                            <a href="../backend/_deletar_viagens.php?id=<?php echo $d['id'] ?>">Deletar</a>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
             </table>
-
-
-
-
         </div>
     </div>
-<?php
-$conn = null;
-?>
+    <?php
+    $conn = null;
+    ?>
 </body>
 
 </html>
