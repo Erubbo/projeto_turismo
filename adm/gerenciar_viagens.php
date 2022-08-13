@@ -54,7 +54,7 @@ try {
                         <td><?php echo $d['desc'] ?></td>
                         
                         <td>
-                            Alterar
+                        <a href="alterar_viagens.php?id=<?php echo $d['id']?>">Alterar</a>
                         </td>
                         <td>
                             <a href="../backend/_deletar_viagens.php?id=<?php echo $d['id'] ?>">Deletar</a>
