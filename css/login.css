@@ -1,0 +1,38 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    
+
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    display: grid;
+    place-content: center;
+    height: 100vh;
+
+}
+.login{
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    border-radius: 8px;
+}
+.center{
+    text-align: right;
+}
+
+.botaolog{
+    margin: 0 auto;
+    display: block;
+    border-radius: 5px;
+}
+.login div{
+    padding: 10px;
+}
+
+h3{
+text-align: center;
+    display: block;
+}
+
