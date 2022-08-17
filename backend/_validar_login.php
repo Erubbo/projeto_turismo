@@ -9,7 +9,10 @@ $sql = "SELECT * from
 tb_login 
 where email = '$email' 
 AND senha= '$senha'
-AND ATIVO=1";
+AND
+    BINARY senha='$senha'
+AND ATIVO=1"
+;
 
 
 $command = $conn->prepare($sql);
