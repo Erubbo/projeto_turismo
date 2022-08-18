@@ -46,6 +46,7 @@ try{
                     <h4><?php echo $d['titulo'] ?></h4>
                     <h5><?php echo $d['local'] ?></h5>
                     <h5>R$<?php echo $d['valor'] ?></h5>
+                    <td><?php echo $d['img'] ?></td>
                     <small><?php echo $d['desc'] ?></small>
                     <button class="btn-comprar">Comprar</button>
                 </figcaption>

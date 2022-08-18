@@ -30,6 +30,9 @@ try {
 <body>
     <div class="container">
         <h3>Alterar Viagem</h3>
+        <hr>
+        <a href="gerenciar_viagens.php">Gerenciar Viagens</a>
+        <hr>        
 
         <form action="../backend/_alterar_viagens.php" method="post">
             <div class="grid-alterar">
@@ -49,6 +52,10 @@ try {
                 <div>
                     <label for="valor">Valor</label>
                     <input type="number" name="valor" id="valor" value="<?php echo $dados[0]['valor'] ?>">
+                </div>
+                <div>
+                    <label for="img">Imagem</label>
+                    <input type="file" name="img" id="img" value="" >
                 </div>
                 <div>
                     <label for="descricao">Descrição</label>

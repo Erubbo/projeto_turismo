@@ -32,6 +32,9 @@ try {
     <div class="container">
         <div class="tabela">
             <h3>Gerenciar Viagens</h3>
+            <hr>
+            <a href="cadastrar_viagens.html">Cadastrar Viagens</a>
+            <hr>
             <table>
                 <tr>
                     <th>ID</th>

@@ -14,22 +14,37 @@ try {
 $titulo = $_POST['titulo'];
 $local = $_POST['local'];
 $valor = $_POST['valor'];
+$img = $_FILES['img'];
 $desc = $_POST['desc'];
+
+// ===========================
+// upload da imagem
+
+// onde será colocada a img
+$pasta = '../img/upload/';
+
+
+$nome_img = 'img.jpg';
+// função php para fazer upload
+move_uploaded_file($_FILES['img']['tmp_name'],$pasta.$nome_img);
+
+// ================
 
 // variavel que recebe a query sql que será executada no DB
 
 $sql = "INSERT INTO 
 tb_viagens
-(titulo,`local`,valor,`desc`)
+(titulo,`local`,valor,`img`,`desc`)
 values
-('$titulo','$local','$valor','$desc')";
+('$titulo','$local','$valor','$img','$desc')";
 
 // prepara a execução da query SQL a cima
 $command = $conn -> prepare($sql);
 // executa o comando com a query no DB
 $command -> execute();
 
-echo "Cadastro realizado com sucesso";
+// echo "Cadastro realizado com sucesso";
+header('Location: ../adm/cadastrar_viagens.html');
 
 $conn = null;
 
@@ -40,5 +55,7 @@ $conn = null;
 
 
 }
+
+
 
 ?>
