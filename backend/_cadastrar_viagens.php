@@ -20,13 +20,29 @@ $desc = $_POST['desc'];
 // ===========================
 // upload da imagem
 
+
+
+$extensao = pathinfo($_FILES['img']['name'],PATHINFO_EXTENSION);
+
+
+if($extensao != 'jpg' && $extensao != 'jpeg' && $extensao !='png'){
+    echo 'Formato de imagem inválido';
+    exit;
+}
+// gerar um id unico
+$hash = md5( uniqid($_FILES['img']['tmp_name'],true));
+
+$nome_final = $hash.'.'.$extensao;
+
 // onde será colocada a img
 $pasta = '../img/upload/';
 
 
-$nome_img = 'img.jpg';
 // função php para fazer upload
-move_uploaded_file($_FILES['img']['tmp_name'],$pasta.$nome_img);
+
+move_uploaded_file($_FILES['img']['tmp_name'],$pasta.$nome_final);
+
+
 
 // ================
 
@@ -36,7 +52,7 @@ $sql = "INSERT INTO
 tb_viagens
 (titulo,`local`,valor,`img`,`desc`)
 values
-('$titulo','$local','$valor','$img','$desc')";
+('$titulo','$local','$valor','$nome_final','$desc')";
 
 // prepara a execução da query SQL a cima
 $command = $conn -> prepare($sql);

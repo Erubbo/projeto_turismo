@@ -41,12 +41,11 @@ try{
             foreach($dados as $d):
             ?>
             <figure class="figure-viagens">
-                <img class="img-viagens" src="img/viagem-faltando.png" alt="Imagem da viagem">
-                <figcaption class="figc-viagens">
+                <img class="img-viagens" src="img/upload/<?php echo $d['img']?>" alt="Imagem da viagem">
+                <figcaption class="figc-viagens"
                     <h4><?php echo $d['titulo'] ?></h4>
                     <h5><?php echo $d['local'] ?></h5>
                     <h5>R$<?php echo $d['valor'] ?></h5>
-                    <td><?php echo $d['img'] ?></td>
                     <small><?php echo $d['desc'] ?></small>
                     <button class="btn-comprar">Comprar</button>
                 </figcaption>

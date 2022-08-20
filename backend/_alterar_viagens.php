@@ -7,7 +7,30 @@ try{
     $titulo = $_POST['titulo'];
     $local = $_POST['local'];
     $valor = $_POST['valor'];
+    $img = $_FILES['img'];
     $desc = $_POST['desc'];
+
+    $extensao = pathinfo($_FILES['img']['name'],PATHINFO_EXTENSION);
+
+
+    if($extensao != 'jpg' && $extensao != 'jpeg' && $extensao !='png'){
+        echo 'Formato de imagem inválido';
+        exit;
+    }
+    // gerar um id unico
+    $hash = md5( uniqid($_FILES['img']['tmp_name'],true));
+    
+    $nome_final = $hash.'.'.$extensao;
+    
+    // onde será colocada a img
+    $pasta = '../img/upload/';
+    
+    
+    // função php para fazer upload
+    
+    move_uploaded_file($_FILES['img']['tmp_name'],$pasta.$nome_final);
+    
+
 
     $sql = "UPDATE 
 
@@ -16,7 +39,9 @@ try{
     titulo  = '$titulo',
     `local` = '$local',
     valor   = '$valor',
+    img = '$img'
     `desc`  = '$desc'
+
      WHERE 
       id    =   $id;
       ";
