@@ -38,3 +38,8 @@
 table, tr, th, td{
     border: 1px solid black;
 }
+
+.img-edit{
+    width: 350px;
+    display: block;
+}

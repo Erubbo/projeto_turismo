@@ -7,8 +7,12 @@ try{
     $titulo = $_POST['titulo'];
     $local = $_POST['local'];
     $valor = $_POST['valor'];
-    $img = $_FILES['img'];
     $desc = $_POST['desc'];
+   
+   $veri =$_FILES['img']['name'];
+
+   if($veri != null){
+    $img = $_FILES['img'];
 
     $extensao = pathinfo($_FILES['img']['name'],PATHINFO_EXTENSION);
 
@@ -39,12 +43,27 @@ try{
     titulo  = '$titulo',
     `local` = '$local',
     valor   = '$valor',
-    img = '$img'
+    img = '$nome_final',
     `desc`  = '$desc'
 
      WHERE 
       id    =   $id;
       ";
+
+   }else{
+
+    $sql = "UPDATE 
+
+    tb_viagens SET 
+    
+    titulo  = '$titulo',
+    `local` = '$local',
+    valor   = '$valor',
+    `desc`  = '$desc'
+
+     WHERE 
+      id    =   $id;
+      ";}
 
       $command = $conn->prepare($sql);
 

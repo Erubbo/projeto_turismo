@@ -32,9 +32,9 @@ try {
         <h3>Alterar Viagem</h3>
         <hr>
         <a href="gerenciar_viagens.php">Gerenciar Viagens</a>
-        <hr>        
+        <hr>
 
-        <form action="../backend/_alterar_viagens.php" method="post">
+        <form action="../backend/_alterar_viagens.php" method="post" enctype="multipart/form-data">
             <div class="grid-alterar">
                 <div>
                     <label for="titulo">ID</label>
@@ -55,11 +55,16 @@ try {
                 </div>
                 <div>
                     <label for="img">Imagem</label>
-                    <input type="file" name="img" id="img" value="" >
+                    <input type="file" name="img" id="img">
                 </div>
                 <div>
-                    <label for="descricao">Descrição</label>
-                    <textarea name="descricao" id="descricao" cols="30" rows="10"><?php echo $dados[0]['desc'] ?></textarea>
+                    <label for="">Imagem atual</label>
+                    <img class="img-edit" src="../img/upload/<?php echo $dados[0]['img'] ?>" alt="">
+
+                </div>
+                <div>
+                    <label for="desc">Descrição</label>
+                    <textarea name="desc" id="desc" cols="30" rows="10"><?php echo $dados[0]['desc'] ?></textarea>
 
                 </div>
                 <input type="submit" name="alterar" id="alterar" value="Salvar">
