@@ -25,6 +25,16 @@ $dados = $command ->fetchAll(PDO::FETCH_ASSOC);
 // VERIFICA SE EXISTEM REGISTROS DENTRO DA VARIAVEL DADOS
 
 if($dados != null ){
+
+    // iniciar sessao
+    session_start();
+// cria uma variavel de sessao e adiciona o email digitado
+    $_SESSION['email'] = $email;
+
+var_dump($_SESSION['email']);
+
+
+
     header('Location: ../adm/gerenciar_viagens.php');
 }else{
 
