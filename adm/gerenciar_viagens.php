@@ -1,7 +1,10 @@
 <?php
-include '../backend/conexao.php';
 
 
+
+include '../backend/includes/conexao.php';
+
+include '../backend/includes/controle_session.php';
 try {
     $sql = "SELECT * FROM tb_viagens";
 
@@ -33,8 +36,8 @@ try {
         <div class="tabela">
             <h3>Gerenciar Viagens</h3>
             <hr>
-            <a href="cadastrar_viagens.html">Cadastrar Viagens</a>
-            <a href="index.html">Sair</a>
+            <a href="cadastrar_viagens.php">Cadastrar Viagens</a>
+            <a href="../backend/logout.php">Sair</a>
             <hr>
             <table>
                 <tr>

@@ -1,3 +1,9 @@
+<?php
+include '../backend/includes/conexao.php';
+
+include '../backend/includes/controle_session.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

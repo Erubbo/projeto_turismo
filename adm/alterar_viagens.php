@@ -1,6 +1,7 @@
 <?php
-include '../backend/conexao.php';
+include '../backend/includes/conexao.php';
 
+include '../backend/includes/controle_session.php';
 $id = $_GET['id'];
 try {
     $sql = "SELECT * from tb_viagens where id=$id";

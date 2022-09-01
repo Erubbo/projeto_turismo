@@ -1,7 +1,7 @@
 <?php
 
 // include da conexão com o banco de dados
-include 'conexao.php';
+include 'includes/conexao.php';
 
 try {
     // // exiber variaveis globais via post

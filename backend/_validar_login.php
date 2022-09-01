@@ -1,5 +1,5 @@
 <?php
-include ('conexao.php');
+include 'includes/conexao.php';
 
 try{   
 $email = $_POST['email'];
@@ -11,8 +11,7 @@ where email = '$email'
 AND senha= '$senha'
 AND
     BINARY senha='$senha'
-AND ATIVO=1"
-;
+AND ATIVO=1";
 
 
 $command = $conn->prepare($sql);
@@ -31,12 +30,15 @@ if($dados != null ){
 // cria uma variavel de sessao e adiciona o email digitado
     $_SESSION['email'] = $email;
 
-var_dump($_SESSION['email']);
+// var_dump($_SESSION['email']);
 
+// exit;
 
 
     header('Location: ../adm/gerenciar_viagens.php');
 }else{
+
+    echo "Usuário ou senha inválidos";
 
     // header('location: ../adm/index.html');
     

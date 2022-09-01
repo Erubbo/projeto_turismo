@@ -1,6 +1,7 @@
 <?php
-include 'conexao.php';
+include 'includes/conexao.php';
 
+include 'includes/controle_session.php';
 try{
 // captura o id enviado via get e armazena em uma variavel
 
