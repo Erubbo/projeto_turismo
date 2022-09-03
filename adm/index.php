@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+
+
+if(isset($_SESSION['email'])){
+    header('Location: gerenciar_viagens.php');
+    
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

@@ -6,7 +6,7 @@ $usuario = $_SESSION['email'];
 
 if($usuario == null){
 
-    header("Location: index.html");
+    header("Location: ../adm/index.php");
     echo "Faça Login";
     exit;
 }
